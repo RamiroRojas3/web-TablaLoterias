@@ -71,40 +71,48 @@ class FormularioLoteria extends Component {
           
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div class="input-group">
-          <div class="grid">
-            <label>
-              Número:
-              <input type="number" name="numero" value={this.state.numero} min="0" max="9999" onChange={this.handleChange} />
-            </label>
+      <form className='container-sm' onSubmit={this.handleSubmit}>
+        <div className='input-group flex-column'>
+
+          <div className="p-2 input-group mb-3">
+              <span className="input-group-text">Numero</span>
+              <input className="form-control" type="number" name="numero" value={this.state.numero} min="0" max="9999" onChange={this.handleChange} />
           </div>
-          <div class="grid">
-            <label>
-              Monto:
-              $<input type="number" name="monto" value={this.state.monto} min="0" onChange={this.handleChange} />
-            </label>
+          
+          <div className="p-2 input-group mb-3">
+
+            
+            <span className="input-group-text">Monto $</span>
+            <input  className="form-control" type="number" name="monto" value={this.state.monto} min="1" onChange={this.handleChange} />
           </div>
           
         </div>
         
-        <div className="grid text-center">
-          
-          <div className ="g-col-6 g-col-md-4">
-            <button value="Nacional" onClick={this.handleLoteriaSelection} className={`btn btn-info ${this.state.loteriasSeleccionadas.includes("Nacional") ? "selected" : ""}`}>Nacional</button>
-
-            <button value="Provincia" onClick={this.handleLoteriaSelection} className={`btn btn-success ${this.state.loteriasSeleccionadas.includes("Provincia") ? "selected" : ""}`}>Provincia</button>
- 
-            <button value="Cordoba" onClick={this.handleLoteriaSelection} className={`btn btn-light ${this.state.loteriasSeleccionadas.includes("Córdoba") ? "selected" : ""}`}>Córdoba</button>
-          
+        <div className="text-center container-sm">
+          <div className="row-xs-2 row">
+            <div className ="p-2 col">
+              <button value="Nacional" onClick={this.handleLoteriaSelection} className={`btn btn-lg  btn-info ${this.state.loteriasSeleccionadas.includes("Nacional") ? "selected" : ""}`}>Nacional</button>
+            </div>
+            <div className ="p-2 col">
+              <button value="Provincia" onClick={this.handleLoteriaSelection} className={`btn btn-lg btn-success ${this.state.loteriasSeleccionadas.includes("Provincia") ? "selected" : ""}`}>Provincia</button>
+            </div>
+            <div className ="p-2 col">
+              <button value="Cordoba" onClick={this.handleLoteriaSelection} className={`btn btn-lg btn-light ${this.state.loteriasSeleccionadas.includes("Córdoba") ? "selected" : ""}`}>Córdoba</button>
+            </div>
           </div>
-          <div className ="g-col-6 g-col-md-4">
-            <button value="SantaFe" onClick={this.handleLoteriaSelection} className={`btn btn-danger ${this.state.loteriasSeleccionadas.includes("SantaFe") ? "selected" : ""}`}>Santa Fe</button>
-            <button value="EntreRios" onClick={this.handleLoteriaSelection} className={`btn btn-primary ${this.state.loteriasSeleccionadas.includes("EntreRios") ? "selected" : ""}`}>Entre Ríos</button>
-            <button value="Oro" onClick={this.handleLoteriaSelection} className={`btn btn-warning ${this.state.loteriasSeleccionadas.includes("Oro") ? "selected" : ""}`}>Oro</button>
+          <div className="ow-xs-2 row"> 
+            <div className ="p-2 col">              
+              <button value="SantaFe" onClick={this.handleLoteriaSelection} className={`btn btn-lg btn-danger ${this.state.loteriasSeleccionadas.includes("SantaFe") ? "selected" : ""}`}>Santa Fe</button>
+            </div>
+            <div className ="p-2 col">              
+              <button value="EntreRios" onClick={this.handleLoteriaSelection} className={`btn btn-lg btn-primary ${this.state.loteriasSeleccionadas.includes("EntreRios") ? "selected" : ""}`}>Entre Ríos</button>
+            </div>
+            <div className ="p-2 col">              
+              <button value="Oro" onClick={this.handleLoteriaSelection} className={`btn btn-lg btn-warning ${this.state.loteriasSeleccionadas.includes("Oro") ? "selected" : ""}`}>Oro</button>
+            </div>
           </div>
-
         </div>
+
         <br />
        
         <TablaLoteria 

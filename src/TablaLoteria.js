@@ -11,7 +11,7 @@ class TablaLoteria extends Component {
 
   render() {
     return (
-      <table className='text-bg-light table'id="loterias"> 
+      <table className='text-bg-light table container-sm'id="loterias"> 
         <thead>
           <tr>
             <th scope="col">Lotería</th>
@@ -30,7 +30,7 @@ class TablaLoteria extends Component {
             <td>{item.numero}</td>
             <td>{item.monto}</td>
             <td>
-              <button onClick={() => this.props.handleDelete(loteria, index)}>Eliminar</button>
+              <button className="btn btn-outline-danger" onClick={() => this.props.handleDelete(loteria, index)}>Eliminar</button>
             </td>
           </tr>
           ))
