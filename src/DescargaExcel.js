@@ -16,7 +16,7 @@ class DescargaExcel extends Component {
  
     render() {
         return (
-            <button className="btn btn-success" onClick={this.descarga}>Descargar</button>
+            <button className="btn btn-primary" style={{margin:"10px"}} onClick={this.descarga}>Descargar</button>
         );
     }
 }
